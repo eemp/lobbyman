@@ -1,0 +1,21 @@
+{
+    "name": "lobbyman",
+    "version": "1.0.0",
+    "description": "package for creating workers templates",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "format": "prettier --write '**/*.{js,css,json,md}'"
+    },
+    "author": "Mihir Patel <ee.mihir.patel@gmail.com>",
+    "license": "ISC",
+    "devDependencies": {
+        "@cloudflare/wrangler": "^1.6.0",
+        "prettier": "^1.19.1"
+    },
+    "dependencies": {
+        "lodash": "^4.17.15",
+        "serverless-cloudflare-workers": "^1.2.0",
+        "url-pattern": "^1.0.3"
+    }
+}

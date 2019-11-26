@@ -1,0 +1,3 @@
+#pattern  filter=crypt diff=crypt
+rules.js filter=crypt diff=crypt rules.js
+wrangler.toml filter=crypt diff=crypt wrangler.toml
