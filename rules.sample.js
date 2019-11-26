@@ -11,4 +11,4 @@ module.exports = [
         pattern: '(http(s)\\://)test.:domain.:tld(/*)',
         target: 'https://example.test/{{ _ }}',
     },
-];
+]
