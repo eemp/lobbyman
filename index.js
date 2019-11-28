@@ -67,6 +67,12 @@ function template(string, params) {
         )
     }
 
+    // replace any outstanding placeholders
+    result = result.replace(
+        new RegExp(`{{\\s*\\w+\\s*}}`, 'g'),
+        ''
+    )
+
     return result
 }
 
