@@ -27,9 +27,13 @@ async function handleRequest(request) {
 }
 
 async function handleRule(request, matchedRule) {
-    const { password, username, target } = matchedRule
+    const { password, username, redirect:redirectCode, target } = matchedRule
 
     const url = new URL(template(target, ruleMatcher(request)(matchedRule)))
+
+    if (redirectCode) {
+        return Response.redirect(url.toString(), redirectCode);
+    }
 
     if (username && password) {
         request = new Request(request)

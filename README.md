@@ -6,6 +6,7 @@ Sample config (`rules.js`):
 
 ```
 [
+    // basic auth handling
     {
         pattern: '(http(s)\\://)(:subdomain.):domain.:tld/_analyze',
         target: 'https://example.test/_analyze',
@@ -14,9 +15,18 @@ Sample config (`rules.js`):
         username: 'username',
         password: 'password',
     },
+
+    // wildcards
     {
         pattern: '(http(s)\\://)test.:domain.:tld(/*)',
         target: 'https://example.test/{{ _ }}',
+    },
+
+    // redirect instead of simply proxy
+    {
+        pattern: '(http(s)\\://)test.:domain.:tld(/*)',
+        target: 'https://example.test/{{ _ }}',
+        redirect: 301, // provide code to use
     },
 ]
 ```
