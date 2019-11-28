@@ -24,12 +24,10 @@ Sample config (`rules.js`):
 ## Getting Started
 
 1. `mv rules.sample.js rules.js`
-2. `mv wrangler.sample.toml wrangler.toml`
-3. `npx wrangler preview --watch`
-4. Update rules.js
-5. Update wrangler.toml
-6. `npx wrangler publish`
-7. `npx wrangler publish --env production`
+2. `npx wrangler preview --watch`
+3. Update rules.js
+4. Update wrangler.toml
+5. `npx wrangler publish [--env production]`
 
 Live Demos are hosted on `workers-tooling.cf/demos/router`:
 [Demo /bar](http://workers-tooling.cf/demos/router/bar) | [Demo /foo](http://workers-tooling.cf/demos/router/foo)
