@@ -39,9 +39,6 @@ Sample config (`rules.js`):
 4. Update wrangler.toml
 5. `npx wrangler publish [--env production]`
 
-Live Demos are hosted on `workers-tooling.cf/demos/router`:
-[Demo /bar](http://workers-tooling.cf/demos/router/bar) | [Demo /foo](http://workers-tooling.cf/demos/router/foo)
-
 #### Wrangler
 
 You can use [wrangler](https://github.com/cloudflare/wrangler) to generate a new Cloudflare Workers project based on this template by running the following command from your terminal:
