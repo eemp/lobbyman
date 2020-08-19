@@ -10,7 +10,7 @@
     "author": "Mihir Patel <ee.mihir.patel@gmail.com>",
     "license": "ISC",
     "devDependencies": {
-        "@cloudflare/wrangler": "^1.6.0",
+        "@cloudflare/wrangler": "^1.10.3",
         "prettier": "^2.0.5"
     },
     "dependencies": {
