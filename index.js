@@ -9,25 +9,17 @@ addEventListener('fetch', event => {
     event.respondWith(handleRequest(event.request))
 })
 
-function handler(request) {
-    const init = {
-        headers: { 'content-type': 'application/json' },
-    }
-    const body = JSON.stringify({ some: 'json' })
-    return new Response(body, init)
-}
-
 async function handleRequest(request) {
     const matchedRule = rules.find(ruleMatcher(request))
     if (matchedRule) {
         return handleRule(request, matchedRule)
     }
 
-    return fetch(request)
+    return fetch(request);
 }
 
 async function handleRule(request, matchedRule) {
-    const { password, username, redirect:redirectCode, target } = matchedRule
+    const { headers, password, username, redirect:redirectCode, target } = matchedRule
 
     const url = new URL(template(target, ruleMatcher(request)(matchedRule)))
 
@@ -43,7 +35,19 @@ async function handleRule(request, matchedRule) {
         )
     }
 
-    return fetch(url, request)
+    let response = request.method !== 'OPTIONS'
+        ? await fetch(url, request)
+        : new Response(null, {
+            status: 204,
+        });
+    if(headers) {
+        response = new Response(response.body, response);
+        Object.keys(headers).forEach(header => {
+            response.headers.set(header, headers[header]);
+        });
+    }
+
+    return response;
 }
 
 function ruleMatcher(request) {
