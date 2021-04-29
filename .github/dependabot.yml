@@ -1,0 +1,21 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "10:00"
+  open-pull-requests-limit: 99
+  ignore:
+  - dependency-name: "@cloudflare/wrangler"
+    versions:
+    - 1.13.0
+    - 1.14.0
+    - 1.14.1
+    - 1.15.0
+    - 1.15.1
+    - 1.16.0
+  - dependency-name: y18n
+    versions:
+    - 4.0.1
+    - 4.0.2
